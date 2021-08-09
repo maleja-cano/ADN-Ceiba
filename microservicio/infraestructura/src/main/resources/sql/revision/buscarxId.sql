@@ -1,0 +1,1 @@
+select * from revisiones where idRevision = :idRevision

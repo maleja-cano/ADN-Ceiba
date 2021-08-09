@@ -1,0 +1,2 @@
+insert into usuario(nombre,clave,fecha_creacion) values('test','1234',now());
+insert into revisiones(matriculaInmobiliaria, direccion, fechaVisita, calificacion, fechaProximaRevision, valorRevision) values ('230-22322', 'Manzana A Casa 1', '2021-08-08', 'Buena', '2026-08-31', 50000);
