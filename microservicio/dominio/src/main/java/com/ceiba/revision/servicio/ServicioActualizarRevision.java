@@ -29,8 +29,8 @@ public class ServicioActualizarRevision {
         return this.repositorioRevision.calcularFechaProximaRevision(revision.getFechaVisita());
     }
 
-    /*private boolean validarExistenciaPrevia(Revision revision) {
+    public boolean validarExistenciaPrevia(Revision revision) {
         boolean existe = this.repositorioRevision.buscarxId(revision.getIdRevision());
         return existe;
-    }*/
+    }
 }
