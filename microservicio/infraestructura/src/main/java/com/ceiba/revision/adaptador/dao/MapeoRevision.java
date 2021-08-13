@@ -12,7 +12,11 @@ public class MapeoRevision implements RowMapper<DtoRevision>, MapperResult {
     @Override
     public DtoRevision mapRow(ResultSet resultSet, int rowNum) throws SQLException {
         Long idRevision = resultSet.getLong("idRevision");
+<<<<<<< HEAD
         String matriculaInmobiliaria = resultSet.getString("matriculaInmobiliaria");
+=======
+        String matriculaInmobiliaria = resultSet.getString("matricuLaInmobiliaria");
+>>>>>>> 026261fca47f1dfcfe7a8ba1a90ea9d09c22f7cd
         String direccion = resultSet.getString("direccion");
         Date fechaVisita = resultSet.getDate("fechaVisita");
         String calificacion = resultSet.getString("calificacion");
