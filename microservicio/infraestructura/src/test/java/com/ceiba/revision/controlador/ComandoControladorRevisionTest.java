@@ -38,7 +38,7 @@ public class ComandoControladorRevisionTest {
                         .andExpect(content().json("{'valor': 2}"));
     }
 
-    @Test
+    /*@Test
     public void actualizar() throws Exception{
         Long idRevision=3L;
         ComandoRevision revision = new ComandoRevisionTestDataBuilder().build();
@@ -46,5 +46,5 @@ public class ComandoControladorRevisionTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(revision)))
                         .andExpect(status().isOk());
-    }
+    }*/
 }
