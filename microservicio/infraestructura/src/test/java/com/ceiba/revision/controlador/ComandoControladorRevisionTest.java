@@ -38,13 +38,13 @@ public class ComandoControladorRevisionTest {
                         .andExpect(content().json("{'valor': 2}"));
     }
 
-    /*@Test
+    @Test
     public void actualizar() throws Exception{
-        Long idRevision=1L;
+        Long idRevision=3L;
         ComandoRevision revision = new ComandoRevisionTestDataBuilder().build();
-        mocMvc.perform(put("/revision/{id}",idRevision)
+        mocMvc.perform(put("/revisiones/actualizar/{idRevision}",idRevision)
                         .contentType(MediaType.APPLICATION_JSON)
-                        .accept(MediaType.APPLICATION_JSON))
+                        .content(objectMapper.writeValueAsString(revision)))
                         .andExpect(status().isOk());
-    }*/
+    }
 }
