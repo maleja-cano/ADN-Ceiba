@@ -31,10 +31,10 @@ public class RevisionTestDataBuilder {
         return this;
     }
 
-    /*public RevisionTestDataBuilder asignaId(Long idRevision){
+    public RevisionTestDataBuilder asignaId(Long idRevision){
         this.idRevision = idRevision;
         return this;
-    }*/
+    }
 
     public Revision build(){
         return new Revision(idRevision, matriculaInmobiliaria, direccion, fechaVisita, calificacion, fechaProximaRevision, valorRevision);

@@ -68,7 +68,7 @@ public class ServicioGuardarRevisionTest {
         Mockito.when(repositorioRevision.guardarRevision(revision)).thenReturn(1L);
         ServicioGuardarRevision servicioGuardarRevision = new ServicioGuardarRevision(repositorioRevision);
         //Act - Assert
-        //Assert.assertEquals(servicioGuardarRevision.guardarRevision(revision), revision.getIdRevision());
+        Assert.assertEquals(servicioGuardarRevision.guardarRevision(revision), revision.getIdRevision());
     }
 
 }
