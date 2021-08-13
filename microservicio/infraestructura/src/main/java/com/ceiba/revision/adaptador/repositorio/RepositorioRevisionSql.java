@@ -21,8 +21,8 @@ public class RepositorioRevisionSql implements RepositorioRevision {
     @SqlStatement(namespace="revision", value="actualizar")
     private static String sqlActualizar;
 
-    //@SqlStatement(namespace="revision", value="buscarxId")
-    //private static String sqlBuscarxId;
+    @SqlStatement(namespace="revision", value="buscarxId")
+    private static String sqlBuscarxId;
 
     public RepositorioRevisionSql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -38,13 +38,13 @@ public class RepositorioRevisionSql implements RepositorioRevision {
         this.customNamedParameterJdbcTemplate.crear(revision, sqlActualizar);
     }
 
-    /*@Override
+    @Override
     public boolean buscarxId(Long idRevision) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("idRevision", idRevision);
 
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlBuscarxId,paramSource, Boolean.class);
-    }*/
+    }
 
     @Override
     public int calcularValorRevision(String calificacion){
