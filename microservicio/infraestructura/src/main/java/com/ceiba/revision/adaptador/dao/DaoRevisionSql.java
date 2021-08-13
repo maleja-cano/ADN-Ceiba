@@ -15,8 +15,8 @@ public class DaoRevisionSql implements DaoRevision {
     @SqlStatement(namespace="revision", value="listar")
     private static String sqlListar;
 
-    @SqlStatement(namespace="revision", value="buscarxMatricula")
-    private static String sqlBuscarxMatricula;
+    //@SqlStatement(namespace="revision", value="buscarxMatricula")
+    //private static String sqlBuscarxMatricula;
 
     public DaoRevisionSql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate){
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;

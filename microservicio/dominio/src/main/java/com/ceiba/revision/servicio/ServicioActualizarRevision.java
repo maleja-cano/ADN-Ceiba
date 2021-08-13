@@ -13,12 +13,12 @@ public class ServicioActualizarRevision {
     }
 
     public void actualizarRevision(Revision revision){
-        boolean existe=this.validarExistenciaPrevia(revision);
-        if(existe) {
+        //boolean existe=this.validarExistenciaPrevia(revision);
+        //if(existe) {
             revision.setValorRevision(this.calcularValorRevision(revision));
             revision.setFechaProximaRevision(this.calcularFechaProximaRevision(revision));
             this.repositorioRevision.actualizarRevision(revision);
-        }
+        //}
     }
 
     public int calcularValorRevision(Revision revision){
@@ -29,8 +29,8 @@ public class ServicioActualizarRevision {
         return this.repositorioRevision.calcularFechaProximaRevision(revision.getFechaVisita());
     }
 
-    private boolean validarExistenciaPrevia(Revision revision) {
+    /*private boolean validarExistenciaPrevia(Revision revision) {
         boolean existe = this.repositorioRevision.buscarxId(revision.getIdRevision());
         return existe;
-    }
+    }*/
 }
