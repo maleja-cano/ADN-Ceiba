@@ -16,6 +16,6 @@ spring:
       type: com.zaxxer.hikari.HikariDataSource
       jdbcUrl: jdbc:h2:mem:mibase
       username: alejandra
-      password: ENC(1wbeQ4teJaS7JSvSYb5t6g==)
+      password:
       hikari:
          poolName: pool

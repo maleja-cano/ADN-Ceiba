@@ -30,6 +30,6 @@ public class ConsultaControladorRevisionTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].matriculaInmobiliaria", is("test")));
+                .andExpect(jsonPath("$[0].matriculaInmobiliaria", is("230-22322")));
     }
 }
