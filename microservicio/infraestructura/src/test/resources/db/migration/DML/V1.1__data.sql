@@ -1,1 +1,1 @@
-insert into revisiones(idRevision, matriculaInmobiliaria, direccion, fechaVisita, calificacion, fechaProximaRevision, valorRevision) values (3,'230-22322', 'Manzana A Casa 1', '2021-08-08', 'Buena', '2026-08-31', 50000);
+insert into revisiones(matriculaInmobiliaria, direccion, fechaVisita, calificacion, fechaProximaRevision, valorRevision) values ('230-22322', 'Manzana A Casa 1', '2021-08-08', 'Buena', '2026-08-31', 50000);
