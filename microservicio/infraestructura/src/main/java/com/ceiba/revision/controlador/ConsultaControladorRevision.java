@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/revisiones")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200/")
 public class ConsultaControladorRevision {
     private final ManejadorListarRevisiones manejadorListarRevisiones;
 

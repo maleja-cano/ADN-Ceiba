@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/revisiones")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200/")
 public class ComandoControladorRevision {
     private final ManejadorGuardarRevision manejadorGuardarRevision;
     private final ManejadorActualizarRevision manejadorActualizarRevision;
