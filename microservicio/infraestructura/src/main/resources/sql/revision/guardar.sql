@@ -1,1 +1,1 @@
-insert into revisiones(matriculaInmobiliaria, direccion, fechaVisita, calificacion) values (:matriculaInmobiliaria, :direccion, :fechaVisita, :calificacion)
+insert into revisiones(matriculaInmobiliaria, direccion, fechaVisita, calificacion, fechaProximaRevision, valorRevision) values (:matriculaInmobiliaria, :direccion, :fechaVisita, :calificacion, :fechaProximaRevision, :valorRevision)

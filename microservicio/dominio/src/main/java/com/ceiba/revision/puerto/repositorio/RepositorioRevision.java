@@ -9,4 +9,5 @@ public interface RepositorioRevision {
     void actualizarRevision(Revision revision);
     int calcularValorRevision(String calificacion);
     Date calcularFechaProximaRevision(Date fechaRevision);
+    boolean buscarxId(Long IdRevision);
 }

@@ -6,7 +6,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class RevisionTestDataBuilder {
-    private Long idRevision;
+    //private Long idRevision;
     private String matriculaInmobiliaria;
     private String direccion;
     private Date fechaVisita;
@@ -31,12 +31,12 @@ public class RevisionTestDataBuilder {
         return this;
     }
 
-    public RevisionTestDataBuilder asignaId(Long idRevision){
+    /*public RevisionTestDataBuilder asignaId(Long idRevision){
         this.idRevision = idRevision;
         return this;
-    }
+    }*/
 
     public Revision build(){
-        return new Revision(idRevision, matriculaInmobiliaria, direccion, fechaVisita, calificacion, fechaProximaRevision, valorRevision);
+        return new Revision(matriculaInmobiliaria, direccion, fechaVisita, calificacion, fechaProximaRevision, valorRevision);
     }
 }

@@ -4,6 +4,7 @@ import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.ceiba.revision.modelo.entidad.Revision;
 import com.ceiba.revision.puerto.repositorio.RepositorioRevision;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
 import java.util.Calendar;
@@ -20,6 +21,9 @@ public class RepositorioRevisionSql implements RepositorioRevision {
     @SqlStatement(namespace="revision", value="actualizar")
     private static String sqlActualizar;
 
+    @SqlStatement(namespace="revision", value="buscarxId")
+    private static String sqlBuscarxId;
+
     public RepositorioRevisionSql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
     }
@@ -32,6 +36,14 @@ public class RepositorioRevisionSql implements RepositorioRevision {
     @Override
     public void actualizarRevision(Revision revision){
         this.customNamedParameterJdbcTemplate.crear(revision, sqlActualizar);
+    }
+
+    @Override
+    public boolean buscarxId(Long idRevision) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("idRevision", idRevision);
+
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlBuscarxId,paramSource, Boolean.class);
     }
 
     @Override

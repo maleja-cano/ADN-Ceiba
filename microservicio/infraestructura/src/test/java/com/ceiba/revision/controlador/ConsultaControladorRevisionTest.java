@@ -1,7 +1,6 @@
 package com.ceiba.revision.controlador;
 
 import com.ceiba.ApplicationMock;
-import com.ceiba.usuario.controlador.ConsultaControladorUsuario;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes= ApplicationMock.class)
-@WebMvcTest(ConsultaControladorUsuario.class)
+@WebMvcTest(ConsultaControladorRevision.class)
 public class ConsultaControladorRevisionTest {
     @Autowired
     private MockMvc mocMvc;
@@ -30,6 +29,6 @@ public class ConsultaControladorRevisionTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].matriculaInmobiliaria", is("test")));
+                .andExpect(jsonPath("$[0].matriculaInmobiliaria", is("230-22322")));
     }
 }
