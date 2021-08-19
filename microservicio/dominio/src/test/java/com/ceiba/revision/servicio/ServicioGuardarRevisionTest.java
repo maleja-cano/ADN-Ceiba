@@ -11,13 +11,19 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 import java.util.Calendar;
+import java.util.Date;
 
 public class ServicioGuardarRevisionTest {
 
     @Test
     public void validarFechaVisita(){
         //Arrange
-        RevisionTestDataBuilder revisionTestDataBuilder = new RevisionTestDataBuilder().asignaFechaVisita(Calendar.getInstance().getTime());
+        Date fechaTemp = new Date();
+        Calendar c = Calendar.getInstance();
+        c.setTime(fechaTemp);
+        c.add(Calendar.DATE, 1);
+        fechaTemp = c.getTime();
+        RevisionTestDataBuilder revisionTestDataBuilder = new RevisionTestDataBuilder().asignaFechaVisita(fechaTemp);
         //Act - Assert
         BasePrueba.assertThrows(() -> revisionTestDataBuilder.build(), ExcepcionValorInvalido.class, "La fecha de la visita no puede ser mayor a la fecha actual");
     }
