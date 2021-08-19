@@ -1,9 +1,10 @@
 package com.ceiba.revision.servicio;
 
+import com.ceiba.BasePrueba;
+import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.revision.modelo.entidad.Revision;
 import com.ceiba.revision.puerto.repositorio.RepositorioRevision;
 import com.ceiba.revision.servicio.testdatabuilder.RevisionTestDataBuilder;
-import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -17,6 +18,6 @@ public class ServicioActualizarRevisionTest {
         Mockito.when(repositorioRevision.buscarxId(Mockito.anyLong())).thenReturn(true);
         ServicioActualizarRevision servicioActualizarRevision = new ServicioActualizarRevision(repositorioRevision);
         // act - assert
-        Assert.assertEquals(servicioActualizarRevision.validarExistenciaPrevia(revision), true);
+        BasePrueba.assertThrows(() -> servicioActualizarRevision.actualizarRevision(revision), ExcepcionDuplicidad.class,"La revision si existe");
     }
 }

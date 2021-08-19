@@ -11,8 +11,6 @@ public class FabricaRevision {
                             comandoRevision.getMatriculaInmobiliaria(),
                             comandoRevision.getDireccion(),
                             comandoRevision.getFechaVisita(),
-                            comandoRevision.getCalificacion(),
-                            comandoRevision.getFechaProximaRevision(),
-                            comandoRevision.getValorRevision());
+                            comandoRevision.getCalificacion());
     }
 }

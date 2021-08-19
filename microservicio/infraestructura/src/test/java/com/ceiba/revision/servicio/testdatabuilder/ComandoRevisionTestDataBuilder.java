@@ -32,6 +32,11 @@ public class ComandoRevisionTestDataBuilder {
         return this;
     }
 
+    public ComandoRevisionTestDataBuilder asignaIdRevision(Long idRevision){
+        this.idRevision = idRevision;
+        return this;
+    }
+
     public ComandoRevision build(){
         return new ComandoRevision(idRevision, matriculaInmobiliaria, direccion, fechaVisita, calificacion, fechaProximaRevision, valorRevision);
     }

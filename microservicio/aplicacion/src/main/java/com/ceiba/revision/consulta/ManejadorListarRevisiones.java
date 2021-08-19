@@ -17,4 +17,8 @@ public class ManejadorListarRevisiones {
     public List<DtoRevision> listar(){
         return this.daoRevision.listar();
     }
+
+    public DtoRevision buscarxIdRevision(Long id){
+        return this.daoRevision.buscarxIdRevision(id);
+    }
 }

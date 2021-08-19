@@ -2,6 +2,7 @@ package com.ceiba.revision.servicio;
 
 import com.ceiba.revision.modelo.entidad.Revision;
 import com.ceiba.revision.puerto.repositorio.RepositorioRevision;
+import com.ceiba.revision.utilidades.Calculos;
 
 import java.util.Date;
 
@@ -18,11 +19,11 @@ public class ServicioGuardarRevision {
         return this.repositorioRevision.guardarRevision(revision);
     }
 
-    public int calcularValorRevision(Revision revision){
-        return this.repositorioRevision.calcularValorRevision(revision.getCalificacion());
+    private int calcularValorRevision(Revision revision){
+        return new Calculos().calcularValorRevision(revision.getCalificacion());
     }
 
-    public Date calcularFechaProximaRevision(Revision revision){
-        return this.repositorioRevision.calcularFechaProximaRevision(revision.getFechaVisita());
+    private Date calcularFechaProximaRevision(Revision revision){
+        return new Calculos().calcularFechaProximaRevision(revision.getFechaVisita());
     }
 }

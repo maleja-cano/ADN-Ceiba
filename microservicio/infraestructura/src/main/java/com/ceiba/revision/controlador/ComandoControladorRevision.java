@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/revisiones")
-@CrossOrigin(origins = "http://localhost:4200/")
 public class ComandoControladorRevision {
     private final ManejadorGuardarRevision manejadorGuardarRevision;
     private final ManejadorActualizarRevision manejadorActualizarRevision;
@@ -25,7 +24,7 @@ public class ComandoControladorRevision {
         return manejadorGuardarRevision.ejecutar(comandoRevision);
     }
 
-    @PutMapping(value="/actualizar/{idRevision}")
+    @PutMapping(value="/actualizarRevision/{idRevision}")
     public void actualizar(@RequestBody ComandoRevision comandoRevision, @PathVariable Long idRevision){
         comandoRevision.setIdRevision(idRevision);
         manejadorActualizarRevision.ejecutar(comandoRevision);

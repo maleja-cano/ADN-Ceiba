@@ -2,6 +2,7 @@ package com.ceiba.revision.controlador;
 
 import com.ceiba.ApplicationMock;
 import com.ceiba.revision.comando.ComandoRevision;
+import com.ceiba.revision.modelo.entidad.Revision;
 import com.ceiba.revision.servicio.testdatabuilder.ComandoRevisionTestDataBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
@@ -12,7 +13,9 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
+import static org.junit.Assert.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -35,16 +38,23 @@ public class ComandoControladorRevisionTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(revision)))
                         .andExpect(status().isOk())
-                        .andExpect(content().json("{'valor': 2}"));
+                        .andExpect(content().json("{'valor': 1}"));
     }
 
-    /*@Test
+    @Test
     public void actualizar() throws Exception{
-        Long idRevision=3L;
+        Long idRevision=1L;
         ComandoRevision revision = new ComandoRevisionTestDataBuilder().build();
-        mocMvc.perform(put("/revisiones/actualizar/{idRevision}",idRevision)
+        mocMvc.perform(put("/revisiones/actualizarRevision/{idRevision}",idRevision)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(revision)))
-                        .andExpect(status().isOk());
-    }*/
+                        .andExpect(status().isOk())
+                        .andDo(resultValorar -> {
+                            assertEquals("230-111111", revision.getMatriculaInmobiliaria());
+                            assertEquals("Calle 1 Carrera 1", revision.getDireccion());
+                            assertEquals("Buena", revision.getCalificacion());
+                            }
+                        );
+
+    }
 }

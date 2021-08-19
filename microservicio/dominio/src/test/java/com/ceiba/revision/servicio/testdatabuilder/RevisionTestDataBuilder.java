@@ -19,6 +19,8 @@ public class RevisionTestDataBuilder {
         direccion = "Calle 1 Carrera 1";
         fechaVisita = Calendar.getInstance().getTime();
         calificacion = "Buena";
+        fechaProximaRevision=Calendar.getInstance().getTime();
+        valorRevision=50000;
     }
 
     public RevisionTestDataBuilder asignaCalificacion(String calificacion){
@@ -37,6 +39,6 @@ public class RevisionTestDataBuilder {
     }
 
     public Revision build(){
-        return new Revision(idRevision, matriculaInmobiliaria, direccion, fechaVisita, calificacion, fechaProximaRevision, valorRevision);
+        return new Revision(idRevision, matriculaInmobiliaria, direccion, fechaVisita, calificacion);
     }
 }

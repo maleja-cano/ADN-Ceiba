@@ -8,7 +8,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/revisiones")
-@CrossOrigin(origins = "http://localhost:4200/")
 public class ConsultaControladorRevision {
     private final ManejadorListarRevisiones manejadorListarRevisiones;
 
@@ -19,6 +18,11 @@ public class ConsultaControladorRevision {
     @GetMapping
     public List<DtoRevision> listar(){
         return this.manejadorListarRevisiones.listar();
+    }
+
+    @GetMapping(value="/buscar/{idRevision}")
+    public DtoRevision buscarxIdRevision(@PathVariable Long idRevision){
+        return this.manejadorListarRevisiones.buscarxIdRevision(idRevision);
     }
 
 }

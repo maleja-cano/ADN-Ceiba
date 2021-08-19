@@ -1,7 +1,9 @@
 package com.ceiba.dominio;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.regex.Matcher;
@@ -94,4 +96,11 @@ public class ValidadorArgumento {
             throw new ExcepcionValorInvalido(mensaje);
         }
     }
+
+    public static void validarMayorQueActual(Date fecha, String mensaje) {
+	    if (fecha.after(new Date())) {
+            throw new ExcepcionValorInvalido(mensaje);
+        }
+    }
+
 }
