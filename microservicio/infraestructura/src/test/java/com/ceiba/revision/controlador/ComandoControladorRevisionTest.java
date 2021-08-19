@@ -38,7 +38,7 @@ public class ComandoControladorRevisionTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(revision)))
                         .andExpect(status().isOk())
-                        .andExpect(content().json("{'valor': 1}"));
+                        .andExpect(content().json("{'valor': 2}"));
     }
 
     @Test
